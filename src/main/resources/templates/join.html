@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>com.frode.quiz.Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
+    <script>
+    <!--
+    $(document).ready(function(){
+        $('#submit').click(function() {
+           $.ajax({
+              url: "http://localhost:8080/score",
+              type: "POST",
+              data:// bygg opp key value pair dictionary med spørsmål og svar brukeren har gitt, backend-en vil så summere score ut i fra data gitt
+              contentType:"text/plain; charset=utf-8",
+              success: function(data){
+                // redirect til scoreboard-side der man kan se score til seg selv og alle andre med en polling-funksjonalitet som oppdaterer scoreboards etter hvert som brukere registrerer sine svar
+            }
+        })
+        });
+    });
+    -->
+    </script>
+</head>
+<body>
+<h1>Her kan du ta en Quiz!</h1>
+<div class="btn">
+    <a href="/" class="btn-home">Home!</a>
+</div>
+<div th:each="ques : ${quiz.getQuestions()}">
+    <p th:text="${ques.getQuestion()}"></p>
+    <select id="answer">
+        <option th:each="ans : ${ques.getAnswers()}" th:text="${ans}"></option>
+    </select>
+</div>
+<button id="submit">Send Ansar</button>
+
+</body>
+</html>

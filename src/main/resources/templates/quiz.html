@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>com.frode.quiz.Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/quiz.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
+    <script>
+    $(document).ready(function(){
+        $('#join').click(function() {
+           window.location = "/join/" + $('#selected_id').find(':selected').text();
+        });
+    });
+    </script>
+</head>
+<body>
+<h1>Her kan du ta en Quiz!</h1>
+<div class="btn">
+    <a href="/" class="btn-home">Home!</a>
+</div>
+<label for="nick">Nickname:</label>
+<input type="text" name="nick" id="nick" placeholder="Nick"/>
+<select id="selected_id">
+    <option th:each="id : ${quiz_ids}" th:text="${id}">
+    </option>
+</select>
+<button id="join">Join</button>
+</body>
+</html>

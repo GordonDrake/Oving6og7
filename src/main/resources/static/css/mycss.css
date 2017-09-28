@@ -1,0 +1,41 @@
+h1 {
+    font-size: 30px;
+    margin: 50px;
+}
+
+.btn {
+    margin: 20px;
+}
+.btn a{
+    margin: 15px;
+    border-style: solid;
+    padding: 10px;
+    radius: 20px;
+    border: 2px solid #000;
+    text-decoration: none;
+    color: black;
+    background: lightblue;
+    font-size: medium;
+}
+
+.btn a:hover{
+    padding: 12px;
+    margin: 13px;
+}
+
+.btn-q {
+    background: lightred;
+}
+
+.btn-ny {
+
+}
+
+.btn-score {
+
+}
+
+
+#form {
+
+}
